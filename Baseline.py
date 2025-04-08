@@ -107,3 +107,44 @@ if __name__ == "__main__":
     x = model(x)  
 
     assert x.size(-1) == 128, f"GRU input mismatch: got {x.size(-1)}, expected 128"
+
+
+#  Overall metrics (micro-average)
+#   ======================================
+#   F-measure
+#     F-measure (F1)                  : 43.26 %
+#     Precision                       : 48.94 %
+#     Recall                          : 38.75 %
+#   Error rate
+#     Error rate (ER)                 : 0.99 
+#     Substitution rate               : 0.02 
+#     Deletion rate                   : 0.59 
+#     Insertion rate                  : 0.38 
+
+#   Class-wise average metrics (macro-average)
+#   ======================================
+#   F-measure
+#     F-measure (F1)                  : 40.99 %
+#     Precision                       : 43.26 %
+#     Recall                          : 41.29 %
+#   Error rate
+#     Error rate (ER)                 : 1.17 
+#     Deletion rate                   : 0.59 
+#     Insertion rate                  : 0.58 
+  
+
+#   Class-wise metrics
+#   ======================================
+#     Event label  | Nref    Nsys  | F        Pre      Rec    | ER       Del      Ins    |
+#     ------------ | -----   ----- | ------   ------   ------ | ------   ------   ------ |
+#     Blender      | 94      110   | 40.2%    37.3%    43.6%  | 1.30     0.56     0.73   |
+#     Vacuum_cle.. | 92      119   | 53.1%    47.1%    60.9%  | 1.08     0.39     0.68   |
+#     Cat          | 341     286   | 44.0%    48.3%    40.5%  | 1.03     0.60     0.43   |
+#     Alarm_bell.. | 420     279   | 49.8%    62.4%    41.4%  | 0.84     0.59     0.25   |
+#     Frying       | 94      181   | 32.7%    24.9%    47.9%  | 1.97     0.52     1.45   |
+#     Dishes       | 559     270   | 22.2%    34.1%    16.5%  | 1.15     0.84     0.32   |
+#     Electric_s.. | 65      81    | 50.7%    45.7%    56.9%  | 1.11     0.43     0.68   |
+#     Speech       | 1752    1448  | 53.1%    58.7%    48.5%  | 0.86     0.51     0.34   |
+#     Running_wa.. | 237     202   | 38.7%    42.1%    35.9%  | 1.14     0.64     0.49   |
+#     Dog          | 570     369   | 25.3%    32.2%    20.9%  | 1.23     0.79     0.44   |
+
